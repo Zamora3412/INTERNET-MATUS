@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar</title>
+  <link rel="stylesheet" type="text/css" href="../estilos/stylesR.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <h2>Internet Matus</h2>
+    <nav>
+      <ul>
+
+        <li class="menu"><a href="../index.html">INICIO</a></li>
+        <li class="menu"><a href="Inicio.html">SERVICIO</a></li>
+        <li class="menu"><a href="Reportar.html">REPORTE</a></li>
+
+
+        <li class="menu1"><a href="Perfil.html">PERFIL</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="div-izquierda">
+      <h1>Reporte de Falla de Internet</h1>
+      <div class="container">
+        <form action="/submit-report" method="POST" enctype="multipart/form-data">
+          <div>
+            <label for="problem-type">Tipo de problema:</label>
+            <select id="problem-type" name="problem-type" required>
+              <option value="">Seleccione un tipo de problema</option>
+              <option value="lentitud">Lentitud</option>
+              <option value="sin-servicio">Sin servicio</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Describe el problema aquí..."
+              required></textarea>
+          </div>
+
+          <div>
+            <label for="date-time">Fecha y hora:</label>
+            <input type="datetime-local" id="date-time" name="date-time" required>
+          </div>
+
+          <div>
+            <label for="frequency">Frecuencia del problema:</label>
+            <select id="frequency" name="frequency" required>
+              <option value="">Seleccione una opción</option>
+              <option value="ocasional">Ocasional</option>
+              <option value="frecuente">Frecuente</option>
+              <option value="constante">Constante</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="model">Modelo del módem/router:</label>
+            <input type="text" id="model" name="model" placeholder="Modelo del equipo" required>
+          </div>
+
+          <div>
+            <label for="lights">Luces del módem/router:</label>
+            <input type="file" id="lights" name="lights" accept="image/*">
+          </div>
+
+          <div>
+            <button type="submit">Enviar reporte</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="div-derecha">
+      <h1>Consultor de Reportes</h1>
+      <div class="container1">
+
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Buscar reporte...">
+          <button type="button" onclick="searchReport()">Buscar</button>
+        </div>
+        <h2>Reportes Generados</h2>
+        <ul class="report-list" id="report-list">
+          <!-- Lista de reportes generados -->
+          <li class="report-item">
+            <div class="report-title">Reporte 1: Lentitud</div>
+            <div class="report-details">Descripción: La velocidad de internet es muy baja. <br> Fecha: 2024-08-01 14:30
+              <br> Frecuencia: Frecuente <br> Modelo: XYZ123</div>
+          </li>
+          <li class="report-item">
+            <div class="report-title">Reporte 2: Sin servicio</div>
+            <div class="report-details">Descripción: No hay conexión a internet. <br> Fecha: 2024-08-02 09:45 <br>
+              Frecuencia: Constante <br> Modelo: ABC456</div>
+          </li>
+          <!-- Más reportes pueden ser agregados aquí -->
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+  <footer>
+    <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+  </footer>
+  <script src="../Scrip/Buscar.js"></script>
+</body>
+
+</html>

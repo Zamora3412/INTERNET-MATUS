@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil</title>
+  <link rel="stylesheet" type="text/css" href="../estilos/stylesP.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <h2>Internet Matus</h2>
+    <nav>
+      <ul>
+
+        <li class="menu"><a href="../index.html">INICIO</a></li>
+        <li class="menu"><a href="Inicio.html">SERVICIO</a></li>
+        <li class="menu"><a href="Reportar.html">REPORTE</a></li>
+
+
+        <li class="menu1"><a href="Perfil.html">PERFIL</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="div-izquierda">
+      <div class="container">
+        <div class="switch">
+          <button id="loginBtn" onclick="showLogin()">Iniciar Sesión</button>
+          <button id="registerBtn" onclick="showRegister()">Registrarse</button>
+        </div>
+
+        <div class="form-container">
+          <div id="loginForm" class="form">
+            <img src="../Imagenes/logo.jpeg" alt="Logo" class="logo">
+            <input type="email" placeholder="Correo Electrónico" class="InRe" required>
+            <input type="password" placeholder="Contraseña" class="InRe" required>
+            <button class="InRe">Iniciar Sesión</button>
+          </div>
+
+          <div id="registerForm" class="form" style="display:none;">
+            <img src="../Imagenes/logo.jpeg" alt="Logo" class="logo">
+            <input type="text" placeholder="Nombre" class="InRe" required>
+            <input type="text" placeholder="Apellidos" class="InRe" required>
+            <input type="text" placeholder="Dirección" class="InRe" required>
+            <input type="tel" placeholder="Teléfono" class="InRe" required>
+            <input type="email" placeholder="Correo Electrónico" class="InRe" required>
+            <button class="InRe">Registrar</button>
+          </div>
+        </div>
+      </div>
+
+      <script src="../Scrip/Login.js"></script>
+
+    </div>
+
+    <div class="div-derecha">
+      <h1 class="textInfo">Mi Cuenta</h1>
+      <div class="container1">
+
+        <form action="/update-profile" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="Juan" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" value="Pérez" required>
+          </div>
+
+          <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" value="Calle Falsa 123" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" value="555-1234" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="juan@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+          </div>
+
+          <button type="submit" id="Actualizar">Actualizar Información</button>
+        </form>
+
+        <div class="info-section">
+          <h2 class="textInfo">Historial de Facturación</h2>
+          <p>Factura 1: Fecha - Monto - Estado</p>
+          <p>Factura 2: Fecha - Monto - Estado</p>
+          <!-- Más facturas... -->
+        </div>
+
+        <div class="info-section">
+          <h2 class="textInfo">Servicio Activo</h2>
+          <p>Plan: Internet 100 Mbps</p>
+          <p>Fecha de Renovación: 01/09/2024</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>
